@@ -1,74 +1,70 @@
-html
-{
+html {
     background-color: #021a13;
     text-align: center;
-    align-items: center;
     background-image: url('img/pozadi.png');
     background-position: center;
     background-size: cover;
     background-repeat: repeat;
 }
 
-
-.hl_karta
-{
-    margin: 20px 420px;
+/* ========== HLAVNÍ KARTA ========== */
+.hl_karta {
+    margin: 20px auto;            /* zarovnat hlavní kartu doprostřed */
+    max-width: 900px;
     border-radius: 15px;
     background-color: #022d21;
     color: #39d4a8;
     box-shadow: 0 0 10px #000000;
+
     display: flex;
+    flex-direction: column;       /* prvky pod sebou */
     justify-content: center;
-    align-items: center;
+    align-items: center;          /* zarovná vše doprostřed */
     padding: 20px;
 }
 
-.hl_karta h1
-{
+.hl_karta h1 {
     font-size: 80px;
 }
 
-.hl_karta img
-{
+.hl_karta img {
     width: 250px;
 }
 
-.tlacitko button
-{
+/* ========== TLAČÍTKO ========== */
+.tlacitko button {
     width: 170px;
     height: 70px;
     font-size: 40px;
     background-color: #021a13;
     border-radius: 15px;
-    border: #39d4a8;
+    border: 2px solid #39d4a8;
     color: #39d4a8;
     box-shadow: 0 0 10px #000000;
     transition: all 0.3s ease;
 }
 
-.tlacitko button:hover
-{
+.tlacitko button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 5px 5px #39d4a8,  0 0 5px 5px #289878;
+    box-shadow: 0 0 5px 5px #39d4a8, 0 0 5px 5px #289878;
 }
 
 #text {
-    display: inline-block;       /* aby šla animovat opacity */
-    transition: all 0.3s ease; /* plynulý přechod textu */
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
-
-.card
-{
+/* ========== FLIP KARTA ========== */
+.card {
     width: 250px;
     height: 250px;
     perspective: 1000px;
-    padding-left: 70px;
-    padding-bottom: 20px;
+
+    margin: 20px auto;     /* ➤ toto ji vycentruje */
+    padding: 0;            /* ➤ odstranění posunu doleva */
 }
 
-.inner
-{
+.inner {
     width: 100%;
     height: 100%;
     position: relative;
@@ -76,26 +72,63 @@ html
     transform-style: preserve-3d;
 }
 
-.card.flipped .inner
-{
+.card.flipped .inner {
     transform: rotateY(180deg);
 }
 
-.front, .back
-{
+.front, .back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+
+    display: flex;          
+    justify-content: center; /* ➤ vycentruje obrázek i text uvnitř */
+    align-items: center;
 }
 
-.back
-{
-    transform: rotateY(180deg)
+.back {
+    transform: rotateY(180deg);
 }
 
-
-.vyhry
-{
+/* ========== VÝHRY ========== */
+.vyhry {
     font-size: 22px;
+}
+
+
+/* ==========================
+   OPTIMALIZACE PRO MOBILY
+   ========================== */
+@media (max-width: 600px) {
+
+    .hl_karta {
+        padding: 15px;
+        width: 95%;
+    }
+
+    .hl_karta h1 {
+        font-size: 45px; /* menší nadpis */
+    }
+
+    .hl_karta img {
+        width: 180px; /* menší logo */
+    }
+
+    .card {
+        width: 180px;
+        height: 180px;
+        margin: 15px auto;
+    }
+
+    .vyhry {
+        font-size: 16px;
+    }
+
+    .tlacitko button {
+        width: 140px;
+        height: 55px;
+        font-size: 30px;
+        margin-top: 10px;
+    }
 }
