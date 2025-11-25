@@ -10,7 +10,7 @@ html {
 /* ========== HLAVNÍ KARTA ========== */
 .hl_karta {
     margin: 20px auto;            /* zarovnat hlavní kartu doprostřed */
-    max-width: 900px;
+    max-width: 600px;
     border-radius: 15px;
     background-color: #022d21;
     color: #39d4a8;
@@ -132,3 +132,4 @@ html {
         margin-top: 10px;
     }
 }
+
