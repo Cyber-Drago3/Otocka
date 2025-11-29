@@ -5,9 +5,9 @@ function los() {
 
     let Nahodnecislo = Math.floor(Math.random()* 11)
 
-    let vyhraA = "Vyhra A"
-    let vyhraB = "Vyhra B"
-    let vyhraC = "Vyhra C"
+    let vyhraA = "Otázka"
+    let vyhraB = "Sleva 10 %"
+    let vyhraC = "Sleva 15%"
 
     if (Nahodnecislo == 1)
     {
@@ -41,3 +41,4 @@ function los() {
         }, 300);
     }, 1800); // 300ms fade + 1500ms čekání
 }
+
